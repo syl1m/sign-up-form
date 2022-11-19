@@ -1,13 +1,16 @@
 const password = document.querySelector('[name="password"]');
 const confirmPassword = document.querySelector('[name="confirm_password"]');
 const button = document.querySelector('button');
-button.addEventListener('click',matchPassword);
+const inputs = document.querySelectorAll('input');
 
-function matchPassword(e) {
+button.addEventListener('click',checkSubmission);
+password.addEventListener('keyup',matchPassword);
+confirmPassword.addEventListener('keyup',matchPassword);
+
+function matchPassword() {
     if (password.value === "" || confirmPassword.value === "") {
         return;
     } else if (password.value !== confirmPassword.value) {
-        e.preventDefault();
         password.classList.add('error');
         confirmPassword.classList.add('error');
         password.classList.remove('match');
@@ -18,4 +21,15 @@ function matchPassword(e) {
         password.classList.add('match');
         confirmPassword.classList.add('match');
     }
+}
+
+function checkSubmission(e) {
+    let invalid = false;
+    inputs.forEach(input => {
+        if (input.matches(':invalid')) {
+            invalid = true;
+        }
+    });
+    if (invalid) return;
+    if (password.value !== confirmPassword.value) e.preventDefault();
 }
