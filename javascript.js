@@ -10,8 +10,12 @@ function matchPassword(e) {
         e.preventDefault();
         password.classList.add('error');
         confirmPassword.classList.add('error');
+        password.classList.remove('match');
+        confirmPassword.classList.remove('match');
     } else {
         password.classList.remove('error');
         confirmPassword.classList.remove('error');
+        password.classList.add('match');
+        confirmPassword.classList.add('match');
     }
 }
