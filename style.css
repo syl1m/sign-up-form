@@ -74,6 +74,35 @@ img {
 
 .form {
     background-color: white;
+    font-size: 0.75rem;
+    color: darkslategray;
+    letter-spacing: .1rem;
+}
+
+.form_text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: black;
+    letter-spacing: normal;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form > div {
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    padding-right: 2rem;
+}
+
+input {
+    width: 35ch;
 }
 
 button {
