@@ -3,6 +3,7 @@ body {
     display: flex;
     min-height: 100vh;
     margin: 0;
+    background-color: #4980f718;
 }
 
 .left_side,
@@ -27,8 +28,10 @@ body {
 .logo_section {
     display: flex;
     justify-content: center;
-    margin: 20% 10%;
+    margin: 20% 0;
+    padding: 0 10%;
     gap: 1.5rem;
+    background-color: rgba(60, 60, 60, 0.4);
 }
 
 img {
@@ -51,4 +54,49 @@ img {
 .footer {
     padding: 1rem;
     text-align: center;
+}
+
+.top, .form, .bottom {
+    padding: 3rem;
+}
+
+.top {
+    font-size: 1.2rem;
+}
+
+.top div {
+    margin-bottom: 1rem;
+}
+
+.disclaimer {
+    color: red;
+}
+
+.form {
+    background-color: white;
+}
+
+button {
+    margin-bottom: 1rem;
+    padding: 0.75rem 3rem;
+    border-radius: 10px;
+    font-family: 'Ubuntu Condensed';
+    font-size: 1.2rem;
+    background-color: rgba(1,126,189,255);
+    color: white;
+    font-weight: 800;
+    letter-spacing: .1rem;
+    transition-duration: 0.4s;
+    border: none;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: rgba(1,126,189,255);
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(1,126,189,255);
 }
