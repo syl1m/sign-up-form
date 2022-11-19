@@ -146,3 +146,23 @@ a {
 .match {
     border: 2px solid green;
 }
+
+input + span {
+    position: relative;
+}
+
+input + span::before {
+    position: absolute;
+    left: 0px;
+    top: 10px;
+}
+
+.error + span::before {
+    content: "✖ Passwords do not match";
+    color: red;
+}
+
+.match + span::before {
+    content: "✓ Passwords match";
+    color: green;
+}
