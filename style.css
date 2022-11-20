@@ -149,6 +149,7 @@ a {
 
 input + span {
     position: relative;
+    margin-bottom: 1rem;
 }
 
 input + span::before {

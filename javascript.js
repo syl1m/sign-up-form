@@ -9,6 +9,12 @@ confirmPassword.addEventListener('keyup',matchPassword);
 password.addEventListener('keyup',validatePassword);
 
 function validatePassword() {
+    if (password.value === "") {
+        password.classList.remove('pattern_match');
+        password.classList.remove('pattern_mismatch');
+        return;
+    }
+
     const pattern=/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}/;
     const result = pattern.test(password.value);
     if (!result) {
@@ -22,6 +28,8 @@ function validatePassword() {
 
 function matchPassword() {
     if (password.value === "" || confirmPassword.value === "") {
+        confirmPassword.classList.remove('match');
+        confirmPassword.classList.remove('error');
         return;
     } else if (password.value !== confirmPassword.value) {
         confirmPassword.classList.add('error');
