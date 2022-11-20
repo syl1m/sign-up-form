@@ -138,12 +138,12 @@ a {
     color: rgba(1,126,189,255);
 }
 
-/* Styling for password mismatch */
-.error {
+/* Styling for password mismatch and pattern check */
+.error, .pattern_mismatch {
     border: 2px solid red;
 }
 
-.match {
+.match, .pattern_match {
     border: 2px solid green;
 }
 
@@ -164,5 +164,15 @@ input + span::before {
 
 .match + span::before {
     content: "✓ Passwords match";
+    color: green;
+}
+
+.pattern_mismatch + span::before {
+    content: "✖ Password does not meet requirements";
+    color: red;
+}
+
+.pattern_match + span::before {
+    content: "✓ Password meets requirements";
     color: green;
 }

@@ -6,19 +6,28 @@ const inputs = document.querySelectorAll('input');
 button.addEventListener('click',checkSubmission);
 password.addEventListener('keyup',matchPassword);
 confirmPassword.addEventListener('keyup',matchPassword);
+password.addEventListener('keyup',validatePassword);
+
+function validatePassword() {
+    const pattern=/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}/;
+    const result = pattern.test(password.value);
+    if (!result) {
+        password.classList.add('pattern_mismatch');
+        password.classList.remove('pattern_match')
+    } else {
+        password.classList.remove('pattern_mismatch');
+        password.classList.add('pattern_match')
+    }
+}
 
 function matchPassword() {
     if (password.value === "" || confirmPassword.value === "") {
         return;
     } else if (password.value !== confirmPassword.value) {
-        password.classList.add('error');
         confirmPassword.classList.add('error');
-        password.classList.remove('match');
         confirmPassword.classList.remove('match');
     } else {
-        password.classList.remove('error');
         confirmPassword.classList.remove('error');
-        password.classList.add('match');
         confirmPassword.classList.add('match');
     }
 }
