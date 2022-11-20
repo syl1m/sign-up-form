@@ -4,7 +4,6 @@ const button = document.querySelector('button');
 const inputs = document.querySelectorAll('input');
 
 button.addEventListener('click',checkSubmission);
-password.addEventListener('keyup',matchPassword);
 confirmPassword.addEventListener('keyup',matchPassword);
 password.addEventListener('keyup',validatePassword);
 
